@@ -59,7 +59,7 @@ namespace Assignment_2
                 // read force and angle from textboxes 
                 double length = double.Parse(textBox1.Text);
                 double width = double.Parse(textBox2.Text);
-                double height = double.Parse(textBox2.Text);
+                double height = double.Parse(textBox3.Text);
                 //
                 double area = 2.0 * (length * width + length * height + width + height);
                 double volume = length * width * height;
@@ -79,14 +79,14 @@ namespace Assignment_2
             try
             {
                 // read force and angle from textboxes 
-                double radius = double.Parse(textBox1.Text);
+                double radius = double.Parse(textBox4.Text);
 
                 //
-                double area = 4.0 * 3.14 * radius * radius; 
-                double volume = 
+                double area = 4.0 * 3.14 * radius * radius;
+                double volume = 4.0 / 3.0 * 3.14 * radius * radius * radius;
                 //d
-                label1.Text = "Fx = " + Fx;
-                label2.Text = "Fy = " + Fy;
+                label3.Text = "area = " + area;
+                label4.Text = "volume = " + volume;
             }
             catch
             {
@@ -94,5 +94,29 @@ namespace Assignment_2
                 MessageBox.Show("D'oh!");
             }
         }
+
+        
+            private void Button3_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    // read force and angle from textboxes 
+                    double radius = double.Parse(textBox5.Text);
+                double height = double.Parse(textBox6.Text);
+
+                //
+                double area = 3.14 * radius * (radius + Math.Sqrt(height * height + radius * radius));
+                    double volume = 3.14 * radius * radius * height/3;
+                    //d
+                    label5.Text = "area = " + area;
+                    label6.Text = "volume = " + volume;
+                }
+                catch
+                {
+                    // show error message on screen if fail 
+                    MessageBox.Show("D'oh!");
+                }
+            }
+        }
     }
-}
+
